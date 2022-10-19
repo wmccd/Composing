@@ -91,8 +91,32 @@ Text( "My Vacation", fontSize=40.dp, fontWeight=FontWeight.Bold)
 	* event handlers
 	* gestures
 	* etc	
+
+* Order matters in the modifier
+	
 <img width="882" alt="Screenshot 2022-10-19 at 14 07 35" src="https://user-images.githubusercontent.com/13928099/196700174-5ec9b7dd-c619-411e-a6cd-bb90befbe46b.png">
 
  <img width="919" alt="Screenshot 2022-10-19 at 14 07 18" src="https://user-images.githubusercontent.com/13928099/196700107-129a5286-6370-4dd7-91f7-838313dda7f5.png">
 
+* Common Built in Modifiers
+	* **background** - draws a solid background behind the composable
+	* **clickable** - specifies a handler when clicked and causes UI ripple 
+	* **clip** - clips the composable to specified shape (eg rounded corners)
+	* **fillMaxHeight** - composable expands to max height allowed by parent
+	* **fillMaxSize** - composable expands to max height and width allowed by parent	
+	* **fillMaxWidth** - composable expands to max width allowed by parent
+	* **offset** - positions the composable the specified distance from its current position along x and y axis.
+	* **padding** - the ubiquitous padding
+	* **rotate** - rotates composable around its centre point by the specified number of degrees
+	* **scale** - increase/decrease the size of the composable by the specified scale factor
+	* **size** - used to specify the height and width of a composable
 
+* Modifiers can be chained.
+```
+DisplayImage(
+	id = R.drawable.coast1,
+    modifier = sizeOnlyModifier
+        .then(borderOnlyModifier)
+        .then(roundOnlyModifier)
+)
+```	
