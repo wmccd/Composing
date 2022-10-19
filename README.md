@@ -175,7 +175,7 @@ DisplayImage(
 
 * Row and Scope Modifiers - you can override the behaviour of a parent modifier. Look at the RowScope inside the Row lambda
 
-
+<img width="783" alt="Screenshot 2022-10-19 at 20 35 23" src="https://user-images.githubusercontent.com/13928099/196787813-f95fac42-7827-449d-be70-04eb7f64242d.png">
 
 
 
