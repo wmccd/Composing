@@ -91,6 +91,8 @@ Text( "My Vacation", fontSize=40.dp, fontWeight=FontWeight.Bold)
 	* event handlers
 	* gestures
 	* etc	
+<img width="882" alt="Screenshot 2022-10-19 at 14 07 35" src="https://user-images.githubusercontent.com/13928099/196700174-5ec9b7dd-c619-411e-a6cd-bb90befbe46b.png">
 
- 
+ <img width="919" alt="Screenshot 2022-10-19 at 14 07 18" src="https://user-images.githubusercontent.com/13928099/196700107-129a5286-6370-4dd7-91f7-838313dda7f5.png">
+
 
