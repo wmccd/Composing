@@ -112,6 +112,7 @@ Text( "My Vacation", fontSize=40.dp, fontWeight=FontWeight.Bold)
 	* **size** - used to specify the height and width of a composable
 
 * Modifiers can be chained.
+
 ```
 DisplayImage(
 	id = R.drawable.coast1,
@@ -120,3 +121,62 @@ DisplayImage(
         .then(roundOnlyModifier)
 )
 ```	
+
+## 25 Row and Columns
+
+* Row - uses verticalAlignment and horizontalArrangement 
+
+```	
+	Row(
+	    modifier = Modifier
+	        .size(
+	            height = 60.dp,
+	            width = 150.dp
+	        )
+	        .background(Color.Red),
+	    verticalAlignment = Alignment.Top,
+	    horizontalArrangement = Arrangement.SpaceBetween
+	){
+```
+	
+* Column - uses horizontalAlignment and verticalArrangement 
+
+	
+```
+	Column(
+	    modifier = Modifier.height(height = 60.dp),
+	    horizontalAlignment = Alignment.End,
+	    verticalArrangement = Arrangement.Bottom
+	){
+	    TextCell(words = "2")
+	}
+```
+    
+* Weight - controls the relative width or height or child elemets
+
+```
+	Row(
+	    modifier = Modifier
+	        .width(width = 150.dp)
+	        .background(color = Color.Magenta),
+	
+	){
+	    TextCell(words = "1",
+	        Modifier.weight( weight = 0.2f)
+	    )
+	    TextCell(words = "2",
+	        Modifier.weight( weight = 0.3f)
+	    )
+	    TextCell(words = "3",
+	        Modifier.weight( weight = 0.5f)
+	    )
+	}
+```    
+
+* Row and Scope Modifiers - you can override the behaviour of a parent modifier. Look at the RowScope inside the Row lambda
+
+
+
+
+
+

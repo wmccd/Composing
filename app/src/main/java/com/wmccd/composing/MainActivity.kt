@@ -22,8 +22,8 @@ class MainActivity : ComponentActivity() {
             //Ch21CompositionLocal().Display()
             //Ch22SlotApi().Display()
             //Ch23SlotApi().Display()
-            Ch24Modifier().Display()
-
+            //Ch24Modifier().Display()
+            Ch25RowColumn().Display()
         }
     }
 
