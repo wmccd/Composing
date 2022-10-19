@@ -10,18 +10,20 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.wmccd.composing.chapters.Ch20StateAndRecomposition
-import com.wmccd.composing.chapters.Ch21CompositionLocal
-import com.wmccd.composing.chapters.Ch22SlotApi
+import com.wmccd.composing.chapters.*
 import com.wmccd.composing.ui.theme.ComposingTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+
             //Ch20StateAndRecomposition().Display()
             //Ch21CompositionLocal().Display()
-            Ch22SlotApi().Display()
+            //Ch22SlotApi().Display()
+            //Ch23SlotApi().Display()
+            Ch24Modifier().Display()
+
         }
     }
 
