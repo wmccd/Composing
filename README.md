@@ -221,5 +221,7 @@ Arrange in the direction of flow
 
 * Preview lines
 	* Straight line: margin
-	* Zig-zag lines: opposing constraints
+	* Zig-zag lines:opposing constraints
 	* Zig-zag with straight section: opposing constraint with margin
+
+<img width="287" alt="Screenshot 2022-10-21 at 22 13 10" src="https://user-images.githubusercontent.com/13928099/197290902-e2485065-dad6-4b1d-a96f-0c96722c0ca6.png">
