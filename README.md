@@ -234,3 +234,5 @@ Arrange in the direction of flow
 	Chains(chainStyle = ChainStyle.Packed)
 ```
 
+<img width="297" alt="Screenshot 2022-10-21 at 22 43 50" src="https://user-images.githubusercontent.com/13928099/197294941-bb05eaf7-d1d4-4035-915f-29926d953206.png">
+
