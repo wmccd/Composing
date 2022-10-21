@@ -220,4 +220,6 @@ Arrange in the direction of flow
 ## 30 Constraint Layouts Example
 
 * Preview lines
-	* Straight lin
+	* Straight line: margin
+	* Zig-zag lines: opposing constraints
+	* Zig-zag with straight section: opposing constraint with margin
