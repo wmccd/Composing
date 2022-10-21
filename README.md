@@ -124,6 +124,8 @@ DisplayImage(
 
 ## 25 Row and Columns
 
+Arrange in the direction of flow
+
 * Row - uses verticalAlignment and horizontalArrangement 
 
 ```	
@@ -178,5 +180,44 @@ DisplayImage(
 <img width="783" alt="Screenshot 2022-10-19 at 20 35 23" src="https://user-images.githubusercontent.com/13928099/196787813-f95fac42-7827-449d-be70-04eb7f64242d.png">
 
 
+## 26 Boxes
+
+* Row and Column organize children in a horizontal row or a vertical column.
+* Box Layout stacks its children on top of each other
+* The order is stacking is defined by the order of declaration with the first child the bottom of the stack.
+* Clip the box
+	* CircleShape 
+	```.clip(CircleShape)
+	```
+	* RoundedCornerShape
+	```
+	.clip(RoundedCornerShape(30.dp))
+	```
+	* RoundedCornerShape
+	```
+	.clip(CutCornerShape(30.dp))
+	```
+	
+## 27 Custom Layout Modifiers
+
+* **Constraints**: the rules that dicatehow Composables are aligned and distanced from each other.	
+
+## 29 Constraint Layouts
+
+* **Constraints**: the rules that dicatehow Composables are aligned and distanced from each other.
+* **Margins**: a form of constraint that specifies a fixed distance - *dp based*
+* **Opposing Constraints**: two constraints operating on the same axis on a single composable are referred to as opposing constraints - *% based*
+* **Constraint Bias**: when *Opposing Constraints* apply the Bias allows one contsraint to be have a a higer or lower percentage.
+* **Chains**: allows for two + Composables to be defined as part of a group. Chains can be applied to items in a vertical or horizontal axis. How the items in the chain are spaced and sized.
+	* Spread Chain - composables in a chain are spread evenly with space outide the first and last elements  
+	* Spread Inside Chain - first and last composables aligned against the start and end of the container	
+	* Weighted Chain - no spacing and size of each composable defined by the weights given
+	* Packed Chain - the composables in the chain are packed together woithout spacing
+* **Guidelines**: Additional invisible elememnts that can be used to help constrain against.
+* **Barriers**: Addition invisible elements that can be used to help prevent overlapping composables. Useful when composables can dynamically expand and contract (think change of text)
 
 
+## 30 Constraint Layouts Example
+
+* Preview lines
+	* Straight lin
