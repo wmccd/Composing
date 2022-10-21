@@ -1,11 +1,10 @@
 package com.wmccd.composing.chapters
 
-import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
+import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -14,6 +13,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.constraintlayout.compose.ChainStyle
 import androidx.constraintlayout.compose.ConstraintLayout
 
 class Ch30Constraint {
@@ -23,15 +23,65 @@ class Ch30Constraint {
 
         //ComposableButton()
         Column(
-            Modifier.fillMaxWidth()
+            Modifier
+                .fillMaxWidth()
+                .verticalScroll(rememberScrollState())
+
         ){
             BasicConstraints()
-            Spacer(modifier = Modifier.height(10.dp))
+            Divider()
             OpposingConstraints()
-            Spacer(modifier = Modifier.height(10.dp))
+            Divider()
             ConstraintBias()
+            Divider()
+
+            Chains(chainStyle = ChainStyle.Spread)
+            Chains(chainStyle = ChainStyle.SpreadInside)
+            Chains(chainStyle = ChainStyle.Packed)
+
+            Spacer(modifier = Modifier.height(150.dp))
+
         }
 
+
+    }
+
+    @Composable
+    private fun Chains( chainStyle: ChainStyle) {
+
+        ConstraintLayout(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(100.dp)
+                .border(border = BorderStroke(2.dp, Color.DarkGray))
+                .clip(RoundedCornerShape(5.dp))
+        ) {
+
+            val (button1, button2, button3) = createRefs()
+            createHorizontalChain(
+                button1, button2, button3,
+                chainStyle =  chainStyle
+            )
+
+            MyButton(
+                words = "B1",
+                modifier = Modifier.constrainAs(button1){
+                    centerVerticallyTo(parent)
+                }
+            )
+            MyButton(
+                words = "B2",
+                modifier = Modifier.constrainAs(button2){
+                    centerVerticallyTo(parent)
+                }
+            )
+            MyButton(
+                words = "B3",
+                modifier = Modifier.constrainAs(button3){
+                    centerVerticallyTo(parent)
+                }
+            )
+        }
 
     }
 
@@ -57,7 +107,8 @@ class Ch30Constraint {
                     )
                 }
             )
-        }    }
+        }
+    }
 
     @Composable
     private fun OpposingConstraints() {
