@@ -30,8 +30,14 @@ class MainActivity : ComponentActivity() {
             //Ch24Modifier().Display()
             //Ch25RowColumn().Display()
             //Ch26Box().Display()
-            Ch27CustomModifiers().Display()
-            Ch30Constraint().Display()
+            //Ch27CustomModifiers().Display()
+            //Ch30Constraint().Display()
+            //Ch31IntrinsicSize().Display()
+            //Ch32ListsGrids().Display()
+            //Ch34LazyList().Display()
+            Ch36VisibilityAnimation().Display()
+            Ch44Navigation().Display()
+
         }
     }
 

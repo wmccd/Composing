@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="car_array">
+        <item>Alpine</item>
+        <item>Aplha Romeo</item>
+        <item>Aplha Tauri</item>
+        <item>Aston Martin</item>
+        <item>Ferrari</item>
+        <item>Haas</item>
+        <item>McLaren</item>
+        <item>Mercedes</item>
+        <item>Red Bull</item>
+        <item>Williams</item>
+    </string-array>
+</resources>

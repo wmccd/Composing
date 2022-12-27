@@ -15,6 +15,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ChainStyle
 import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.constraintlayout.compose.Dimension
 
 class Ch30Constraint {
 
@@ -28,6 +29,9 @@ class Ch30Constraint {
                 .verticalScroll(rememberScrollState())
 
         ){
+
+            Barrier()
+            Divider()
             BasicConstraints()
             Divider()
             OpposingConstraints()
@@ -38,12 +42,69 @@ class Ch30Constraint {
             Chains(chainStyle = ChainStyle.Spread)
             Chains(chainStyle = ChainStyle.SpreadInside)
             Chains(chainStyle = ChainStyle.Packed)
-
             Spacer(modifier = Modifier.height(150.dp))
+
+
 
         }
 
 
+    }
+
+    @Composable
+    private fun Barrier() {
+        ConstraintLayout(
+            modifier = Modifier
+                .height(220.dp)
+                .width(350.dp)
+        ) {
+
+            //button 3 start is constrained to end of button 1
+            //button 3 start is not constrained to end of button 2
+
+            val (button1, button2, button3) = createRefs()
+            val barrier = createEndBarrier(button1, button2)
+
+            MyButton(
+                words = "Button1",
+                modifier = Modifier
+                    .width(100.dp)
+                    .constrainAs(button1){
+                        top.linkTo(anchor = parent.top, margin = 30.dp)
+                        start.linkTo(anchor = parent.start, margin = 30.dp)
+                    }
+            )
+
+            MyButton(
+                words = "Button2",
+                modifier = Modifier
+                    .background(MaterialTheme.colors.secondary)
+                    .width(250.dp)
+                    .constrainAs(button2){
+                        top.linkTo(anchor = button1.bottom, margin = 20.dp)
+                        start.linkTo(anchor = parent.start, margin = 8.dp)
+                    }
+            )
+
+            MyButton(
+                words = "Button3",
+                modifier = Modifier
+                    .width(100.dp)
+                    .constrainAs(button3
+                    ){
+                        linkTo(
+                            top = parent.top, bottom = parent.bottom,
+                            topMargin = 8.dp, bottomMargin = 8.dp
+                        )
+                        linkTo(start = button1.end, end = parent.end,
+                            startMargin = 30.dp, endMargin = 8.dp
+                        )
+                        start.linkTo(barrier, margin = 30.dp)
+                        width = Dimension.fillToConstraints
+                        height = Dimension.fillToConstraints
+                    }
+            )
+        }
     }
 
     @Composable

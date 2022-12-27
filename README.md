@@ -236,3 +236,66 @@ Arrange in the direction of flow
 
 <img width="297" alt="Screenshot 2022-10-21 at 22 43 50" src="https://user-images.githubusercontent.com/13928099/197294941-bb05eaf7-d1d4-4035-915f-29926d953206.png">
 
+## 32 Lists and Grids
+
+* **Scrollable**
+	* You can make Columns and Rows scroll but for performance reasons this is not recommended for long lists.
+	* LazyColumn and LazyRow scroll by default 
+
+
+	```
+	    Row(Modifier.horizontalScroll(rememberScrollState())){
+	        repeat(100){
+	            //Item
+	        }
+	    }
+	
+	    Column(Modifier.verticalScroll(rememberScrollState())){
+	        repeat(100){
+	            //Item
+	        }
+	    }
+	```
+
+* **Programmable Scrolling** 
+	* Columns and Rows can only scroll to a pixel measurement, not an item
+	* LazyColumn and LazyRow scroll to an item
+	* Programmable scrolling takes place in a coroutine - so need to grab a reference to the current CoroutineScope
+* Sticky headers are nice
+* In a LazyColumn use *firstVisibleItemIndex* to find first visible item
+
+```
+        val lazyScrollState = rememberLazyListState()
+        var firstVisible = lazyScrollState.firstVisibleItemIndex
+        LazyColumn(
+            state = lazyScrollState,
+            modifier = Modifier.fillMaxWidth()
+        ){
+           stickyHeader {
+                Text(
+                    text = "First Visible Index: $firstVisible",
+                    style = MaterialTheme.typography.h3
+                )
+            }
+            items{
+               ...
+```
+
+* LazyVerticalGrid modes:
+	* GridCells.Adaptive - fills out the space available  
+
+
+
+## 44 Navigation
+    
+* New screens are *pushed* onto the backstack, and *popped* off the the backstack  
+* The navigation controller handles all the navigation between destinations and managing the nagivation stack. This is represented by the *NavHostController* class. 
+* The navigation host (*NavHost*)is added to the interface layout of an activity and serves as a placeholder for the destinations through which the user will navigate.
+* A NavHost is initiated with a NavController object and a *navigation graph*.   
+* The navigation graph consists of all the composables that are available as navigation destinations within the context of the navigation controller. The destinations are expressed as *routes*.
+* Use a sealed class or enum instead of hard coding routes
+* Use *popUpTo* to pop items off the stack back to the specified destination. 
+	* Use *inclusive = true* to pop the destination off the stack before performing the navigation.
+	* Use *launchSingleTop = true* to prevent the addition of multiple instances of the same destination at the top of the stack
+* 
+
